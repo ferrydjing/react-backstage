@@ -1,7 +1,7 @@
 const { override, fixBabelImports, addWebpackAlias } = require('customize-cra')
 const path = require('path')
 const paths = require('react-scripts/config/paths')
-paths.appBuild = path.join(path.dirname(paths.appBuild), 'dist')
+paths.appBuild = path.join(path.dirname(paths.appBuild), 'docs')
 function resolve(dir) {
   return path.join(__dirname, '.', dir)
 }
