@@ -27,6 +27,7 @@ export const HeaderWrap = styled(Header)`
 
 export const Main = styled(Content)`
   margin-top: 56px;
+  padding: 10px 30px 0;
 `
 
 export const LogoWrap = styled.div`

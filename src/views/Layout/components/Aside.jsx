@@ -1,10 +1,11 @@
 import React, { memo, useEffect } from 'react'
 import { Menu } from 'antd'
 import { withModel } from 'hox'
-import { GithubFilled } from '@ant-design/icons'
+// import { GithubFilled } from '@ant-design/icons'
 import { withRouter } from 'react-router-dom'
 import { AsideWrap, LogoWrap } from '../styled'
 import { useCollapseModel, useMenuModel } from '../store'
+import { Icon } from '@/components'
 
 const Aside = (props) => {
   const {
@@ -32,7 +33,7 @@ const Aside = (props) => {
   return (
     <AsideWrap collapsed={collapse}>
       <LogoWrap>
-        <GithubFilled style={{ fontSize: 36, color: '#fff' }} />
+        <Icon style={{ fontSize: 38, color: '#fff' }} type='bear' />
       </LogoWrap>
       <Menu
         theme='dark'

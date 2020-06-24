@@ -56,6 +56,18 @@ const GlobalStyle = createGlobalStyle`
             font-size: 102.4px;
         }
     }
+    [class^="bacctage-icon-"], [class*=" bacctage-icon-"] {
+        font-family: 'bacctage-icon' !important;
+        font-style: normal;
+        font-weight: normal;
+        font-variant: normal;
+        text-transform: none;
+        line-height: 1;
+        vertical-align: baseline;
+        display: inline-block;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
 `
 
 export default GlobalStyle

@@ -4,7 +4,8 @@ import { createModel } from 'hox'
 import {
   HomeFilled,
   AppstoreFilled,
-  ExclamationCircleFilled
+  ExclamationCircleFilled,
+  LayoutFilled
 } from '@ant-design/icons'
 import { Menu } from 'antd'
 import { Link } from 'react-router-dom'
@@ -25,6 +26,12 @@ const defaulMenu = [
       { key: '/general/button', title: '按钮', icon: '' },
       { key: '/general/icon', title: '图标', icon: '' }
     ]
+  },
+  {
+    key: '/display',
+    title: '展示',
+    icon: <LayoutFilled />,
+    subs: [{ key: '/display/table', title: '表格', icon: '' }]
   },
   {
     key: '/about',
@@ -53,7 +60,7 @@ const useMenuModel = () => {
     </SubMenu>
   )
 
-  const menuClick = ({ item, key, keyPath, domEvent }) => {
+  const menuClick = ({ key }) => {
     setSelectedKeys([key])
     openKeySet(key)
   }
