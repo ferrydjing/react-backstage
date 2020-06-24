@@ -1,4 +1,4 @@
-import React, { memo } from 'react'
+import React, { memo, Suspense, useEffect } from 'react'
 import {
   BrowserRouter as Router,
   Route,
@@ -6,17 +6,31 @@ import {
   Redirect
 } from 'react-router-dom'
 import { DefaultLayout, NotFound, Login } from './utils/loadable'
+import NProgress from 'nprogress'
+import 'nprogress/nprogress.css'
+
+const Loading = () => {
+  useEffect(() => {
+    NProgress.start()
+    return () => {
+      NProgress.done()
+    }
+  }, [])
+  return <div />
+}
 
 const App = (props) => {
   return (
-    <Router>
-      <Switch>
-        <Route path='/' exact render={() => <Redirect to='/index' />} />
-        <Route path='/login' component={Login} />
-        <Route path='/404' component={NotFound} />
-        <Route component={DefaultLayout} />
-      </Switch>
-    </Router>
+    <Suspense fallback={<Loading />}>
+      <Router>
+        <Switch>
+          <Route path='/' exact render={() => <Redirect to='/index' />} />
+          <Route path='/login' component={Login} />
+          <Route path='/404' component={NotFound} />
+          <Route component={DefaultLayout} />
+        </Switch>
+      </Router>
+    </Suspense>
   )
 }
 

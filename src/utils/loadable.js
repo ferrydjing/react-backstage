@@ -1,36 +1,13 @@
-import React, { useEffect } from 'react'
-import Loadable from 'react-loadable'
-import NProgress from 'nprogress'
-import 'nprogress/nprogress.css'
+import { lazy } from 'react'
 
-const useLoadingComponent = () => {
-  useEffect(() => {
-    NProgress.start()
-    return () => {
-      NProgress.done()
-    }
-  }, [])
-
-  return <div />
-}
-
-const loadable = (loader, loading = useLoadingComponent) => {
-  return Loadable({
-    loader,
-    loading
-  })
-}
-
-export const DefaultLayout = loadable(() =>
-  import(/* webpackChunkName: 'default' */ '../views/Layout')
+export const DefaultLayout = lazy(() =>
+  import(/* webpackChunkName: 'layout' */ '../views/Layout')
 )
 
-export const NotFound = loadable(() =>
-  import(/* webpackChunkName: 'default' */ '../views/404')
+export const NotFound = lazy(() =>
+  import(/* webpackChunkName: '404' */ '../views/404')
 )
 
-export const Login = loadable(() =>
-  import(/* webpackChunkName: 'default' */ '../views/Login')
+export const Login = lazy(() =>
+  import(/* webpackChunkName: 'login' */ '../views/Login')
 )
-
-export default loadable
