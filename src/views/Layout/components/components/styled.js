@@ -7,4 +7,5 @@ export const AvatarWrap = styled(Dropdown)`
 
 export const DropdownWrap = styled.div`
   margin-left: auto;
+  cursor: pointer;
 `

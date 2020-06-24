@@ -1,0 +1,1 @@
+{"version":3,"sources":["views/pages/About/index.jsx"],"names":["memo","props"],"mappings":"0HAAA,2BAMeA,0BAJD,SAACC,GACb,OAAO","file":"static/js/about.7ca3218c.chunk.js","sourcesContent":["import React, { memo } from 'react'\n\nconst About = (props) => {\n  return <div>About</div>\n}\n\nexport default memo(About)\n"],"sourceRoot":""}
