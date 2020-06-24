@@ -6,18 +6,18 @@ const Index = lazy(() =>
 )
 
 const About = lazy(() =>
-  import(/*webpackChunkName: 'index' */ '@/views/pages/About')
+  import(/*webpackChunkName: 'about' */ '@/views/pages/About')
 )
 
 const Button = lazy(() =>
-  import(/*webpackChunkName: 'index' */ '@/views/pages/Button')
+  import(/*webpackChunkName: 'button' */ '@/views/pages/Button')
 )
 const Icon = lazy(() =>
-  import(/*webpackChunkName: 'index' */ '@/views/pages/Icon')
+  import(/*webpackChunkName: 'icon' */ '@/views/pages/Icon')
 )
 
 const Table = lazy(() =>
-  import(/*webpackChunkName: 'index' */ '@/views/pages/Table')
+  import(/*webpackChunkName: 'table' */ '@/views/pages/Table')
 )
 
 const routes = [

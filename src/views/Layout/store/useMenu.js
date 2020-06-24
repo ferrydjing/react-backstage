@@ -7,8 +7,9 @@ import {
   ExclamationCircleFilled,
   LayoutFilled
 } from '@ant-design/icons'
-import { Menu } from 'antd'
+import { Menu, Breadcrumb } from 'antd'
 import { Link } from 'react-router-dom'
+import fp from 'lodash/fp'
 
 const { SubMenu } = Menu
 
@@ -79,6 +80,51 @@ const useMenuModel = () => {
     setOpenKeys(openKeys)
   }
 
+  const renderBreadcrumb = ({ pathname }) => {
+    let arr = pathname.split('/').map((item) => `/${item}`)
+    arr = arr.slice(1, arr.length)
+    if (arr[0] === '/index') {
+      arr = []
+    }
+    arr = arr.map((item) => {
+      let obj = fp.find((cur) => cur.key === item, menu)
+      if (!obj) {
+        for (let i = 0; i < menu.length; i++) {
+          if (menu[i].subs) {
+            let cur = fp.find(
+              (cur) => cur.key.indexOf(item) !== -1,
+              menu[i].subs
+            )
+            if (cur) {
+              obj = cur
+              break
+            }
+          }
+        }
+      }
+      return { key: item, txt: obj ? obj.title : '' }
+    })
+    return pathname === '/index' ? (
+      ''
+    ) : (
+      <Breadcrumb style={{ marginBottom: 20 }} computedmatch={undefined}>
+        <Breadcrumb.Item>
+          <Link
+            to='/index'
+            onClick={() => {
+              menuClick({ key: '/index' })
+            }}
+          >
+            首页
+          </Link>
+        </Breadcrumb.Item>
+        {arr.map((item) => (
+          <Breadcrumb.Item key={item.key}>{item.txt}</Breadcrumb.Item>
+        ))}
+      </Breadcrumb>
+    )
+  }
+
   return {
     menu,
     selectedKeys,
@@ -89,7 +135,8 @@ const useMenuModel = () => {
     renderMenuItem,
     setOpenKeys,
     renderSubMenuItem,
-    setSelectedKeys
+    setSelectedKeys,
+    renderBreadcrumb
   }
 }
 
