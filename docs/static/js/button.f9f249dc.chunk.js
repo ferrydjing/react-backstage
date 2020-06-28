@@ -1,0 +1,2 @@
+(this["webpackJsonpreact-backstage"]=this["webpackJsonpreact-backstage"]||[]).push([[2],{461:function(e,t,a){"use strict";a.r(t);var n=a(0),c=a.n(n),l=a(284);t.default=Object(n.memo)((function(e){return c.a.createElement("div",null,c.a.createElement(l.b,null,c.a.createElement("p",null,"\u6807\u8bb0\u4e86\u4e00\u4e2a\uff08\u6216\u5c01\u88c5\u4e00\u7ec4\uff09\u64cd\u4f5c\u547d\u4ee4\uff0c\u54cd\u5e94\u7528\u6237\u70b9\u51fb\u884c\u4e3a\uff0c\u89e6\u53d1\u76f8\u5e94\u7684\u4e1a\u52a1\u903b\u8f91\u3002")))}))}}]);
+//# sourceMappingURL=button.f9f249dc.chunk.js.map

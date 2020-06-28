@@ -1,1 +1,0 @@
-{"version":3,"sources":["views/pages/Button/index.jsx"],"names":["memo","props"],"mappings":"0HAAA,2BAMeA,0BAJA,SAACC,GACd,OAAO","file":"static/js/button.77b9ca93.chunk.js","sourcesContent":["import React, { memo } from 'react'\n\nconst Button = (props) => {\n  return <div>Button</div>\n}\n\nexport default memo(Button)\n"],"sourceRoot":""}

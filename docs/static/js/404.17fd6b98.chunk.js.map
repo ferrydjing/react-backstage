@@ -1,1 +1,0 @@
-{"version":3,"sources":["views/404/index.jsx"],"names":["NotFound","props"],"mappings":"0HAAA,2BAMeA,UAJE,SAACC,GAChB,OAAO","file":"static/js/404.17fd6b98.chunk.js","sourcesContent":["import React from 'react'\n\nconst NotFound = (props) => {\n  return <div>404</div>\n}\n\nexport default NotFound\n"],"sourceRoot":""}
