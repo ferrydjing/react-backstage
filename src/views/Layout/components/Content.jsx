@@ -1,9 +1,19 @@
 import React, { memo } from 'react'
 import { withModel } from 'hox'
-import { ContentWrap, HeaderWrap, Main, CollapsedWrap } from '../styled'
-import { MenuFoldOutlined, MenuUnfoldOutlined } from '@ant-design/icons'
+import {
+  MenuFoldOutlined,
+  MenuUnfoldOutlined,
+  GithubFilled
+} from '@ant-design/icons'
 import Avatar from './components/Avatar'
 import { useCollapseModel } from '../store'
+import {
+  ContentWrap,
+  HeaderWrap,
+  Main,
+  CollapsedWrap,
+  GithubWrap
+} from '../styled'
 
 const Content = (props) => {
   const { collapse, changeCollapse } = props
@@ -22,6 +32,9 @@ const Content = (props) => {
             <MenuFoldOutlined style={{ fontSize: 22 }} />
           )}
         </CollapsedWrap>
+        <GithubWrap>
+          <GithubFilled style={{ fontSize: 20, marginLeft: 'auto' }} />
+        </GithubWrap>
         <Avatar />
       </HeaderWrap>
       <Main>{props.children}</Main>

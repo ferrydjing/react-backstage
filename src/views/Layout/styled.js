@@ -38,3 +38,10 @@ export const LogoWrap = styled.div`
 `
 
 export const CollapsedWrap = styled.div``
+
+export const GithubWrap = styled.a.attrs((props) => ({
+  href: 'https://github.com/ferrydjing/react-backstage'
+}))`
+  margin-left: auto;
+  color: #000;
+`
