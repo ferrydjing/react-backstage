@@ -28,12 +28,13 @@ const Aside = (props) => {
       setSelectedKeys([pathname])
     }, 0)
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
+  }, [location])
 
   return (
     <AsideWrap collapsed={collapse}>
       <LogoWrap>
-        <Icon style={{ fontSize: 38, color: '#fff' }} type='bear' />
+        <Icon style={{ fontSize: 38, color: '#fff' }} type='bear' />{' '}
+        {collapse ? '' : <span>熊崽</span>}
       </LogoWrap>
       <Menu
         theme='dark'

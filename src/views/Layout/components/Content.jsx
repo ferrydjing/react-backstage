@@ -19,7 +19,7 @@ const Content = (props) => {
   const { collapse, changeCollapse } = props
 
   return (
-    <ContentWrap>
+    <ContentWrap style={{ marginLeft: collapse ? 80 : 200 }}>
       <HeaderWrap style={{ left: collapse ? 80 : 200 }}>
         <CollapsedWrap
           onClick={() => {

@@ -10,7 +10,7 @@ const LayoutContainer = (props) => {
   const { location, renderBreadcrumb } = props
 
   return (
-    <Layout>
+    <Layout style={{ overflow: 'hidden' }}>
       <BackTop />
       <Aside></Aside>
       <Content>
