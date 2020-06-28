@@ -10,7 +10,7 @@ css 样式基于 styled components 组件实现
 
 ### 技术栈
 
-`React@16.13.1 + React-router-dom@5.2.0 + styled-components@5.1.1 + antd@4.3.4 + hox@1.1.1`
+`React@16.13.1 + React-router-dom@5.2.0 + styled-components@5.1.1 + antd@4.3.4 + hox@1.1.1等`
 
 > `Create React App` 脚手架工具
 
