@@ -1,0 +1,1 @@
+{"version":3,"sources":["views/pages/Index/index.jsx"],"names":["memo","props"],"mappings":"0HAAA,2BAMeA,0BAJD,SAACC,GACb,OAAO","file":"static/js/index.ace78d28.chunk.js","sourcesContent":["import React, { memo } from 'react'\n\nconst Index = (props) => {\n  return <div>index</div>\n}\n\nexport default memo(Index)\n"],"sourceRoot":""}
