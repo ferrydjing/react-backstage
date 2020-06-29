@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import { Avatar, Menu } from 'antd'
 import { UserOutlined, FormOutlined, LogoutOutlined } from '@ant-design/icons'
 import { AvatarWrap, DropdownWrap } from './styled'
@@ -6,7 +7,9 @@ import { AvatarWrap, DropdownWrap } from './styled'
 const menu = (
   <Menu>
     <Menu.Item icon={<FormOutlined />}>修改密码</Menu.Item>
-    <Menu.Item icon={<LogoutOutlined />}>退出</Menu.Item>
+    <Menu.Item icon={<LogoutOutlined />}>
+      <Link to='/login'>退出</Link>
+    </Menu.Item>
   </Menu>
 )
 

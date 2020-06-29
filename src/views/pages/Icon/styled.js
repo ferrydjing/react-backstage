@@ -3,8 +3,8 @@ import styled from 'styled-components'
 export const IconWrap = styled.section``
 
 export const IconItem = styled.div`
-  margin-top: 10px;
-  padding: 20px;
+  margin-top: 24px;
+  padding: 24px;
   background: #fff;
   border-radius: 4px;
   h2 {

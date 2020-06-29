@@ -1,16 +1,15 @@
 import styled from 'styled-components'
-import { Layout } from 'antd'
+import { Layout, Drawer } from 'antd'
 const { Sider, Content, Header } = Layout
 
 export const AsideWrap = styled(Sider)`
   position: fixed !important;
   left: 0;
-  width: 200px;
   height: 100vh;
 `
 
 export const ContentWrap = styled(Layout)`
-  margin-left: 200px;
+  margin-left: 256px;
   min-height: 100vh !important;
   overflow-x: hidden !important;
   overflow-y: scroll !important;
@@ -22,7 +21,7 @@ export const HeaderWrap = styled(Header)`
   align-items: center;
   /* width: 100%; */
   right: 0;
-  left: 200px;
+  left: 256px;
   height: 56px !important;
   background: #ffffff !important;
   box-shadow: 0px 6px 16px 0px rgba(154, 167, 179, 0.2);
@@ -32,7 +31,7 @@ export const HeaderWrap = styled(Header)`
 
 export const Main = styled(Content)`
   margin-top: 56px;
-  padding: 20px 20px 20px;
+  padding: 24px;
 `
 
 export const LogoWrap = styled.div`
@@ -55,4 +54,10 @@ export const GithubWrap = styled.a.attrs((props) => ({
 }))`
   margin-left: auto;
   color: #000;
+`
+
+export const DrawerWrap = styled(Drawer)`
+  .ant-drawer-body {
+    padding: 0;
+  }
 `

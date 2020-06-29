@@ -10,6 +10,8 @@ import {
 import { Menu, Breadcrumb } from 'antd'
 import { Link } from 'react-router-dom'
 import fp from 'lodash/fp'
+import { useBasicModel } from '../../../store'
+import { useCollapseModel } from '.'
 
 const { SubMenu } = Menu
 
@@ -42,6 +44,8 @@ const defaulMenu = [
 ]
 
 const useMenuModel = () => {
+  const { isMobile } = useBasicModel()
+  const { changeCollapse } = useCollapseModel()
   const [menu] = useState(defaulMenu)
   const [selectedKeys, setSelectedKeys] = useState([])
   const [openKeys, setOpenKeys] = useState([])
@@ -64,6 +68,11 @@ const useMenuModel = () => {
   const menuClick = ({ key }) => {
     setSelectedKeys([key])
     openKeySet(key)
+    setTimeout(() => {
+      if (isMobile) {
+        changeCollapse(false)
+      }
+    }, 0)
   }
 
   const openKeySet = (key) => {

@@ -3,7 +3,9 @@ import { createModel } from 'hox'
 
 const useCollapse = () => {
   const [collapse, setCollapse] = useState(false)
-  const changeCollapse = (val) => setCollapse(val)
+  const changeCollapse = (val) => {
+    setCollapse(val)
+  }
 
   return {
     collapse,

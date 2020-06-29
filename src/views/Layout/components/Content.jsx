@@ -14,19 +14,16 @@ import {
   CollapsedWrap,
   GithubWrap
 } from '../styled'
+import { useBasicModel } from '@/store'
 
 const Content = (props) => {
-  const { collapse, changeCollapse } = props
+  const { collapse, changeCollapse, isMobile } = props
 
   return (
-    <ContentWrap style={{ marginLeft: collapse ? 80 : 200 }}>
-      <HeaderWrap style={{ left: collapse ? 80 : 200 }}>
-        <CollapsedWrap
-          onClick={() => {
-            changeCollapse(!collapse)
-          }}
-        >
-          {collapse ? (
+    <ContentWrap style={{ marginLeft: isMobile ? 0 : collapse ? 80 : 256 }}>
+      <HeaderWrap style={{ left: isMobile ? 0 : collapse ? 80 : 256 }}>
+        <CollapsedWrap onClick={() => changeCollapse(!collapse)}>
+          {collapse || isMobile ? (
             <MenuUnfoldOutlined style={{ fontSize: 22 }} />
           ) : (
             <MenuFoldOutlined style={{ fontSize: 22 }} />
@@ -42,11 +39,12 @@ const Content = (props) => {
   )
 }
 
-const models = [useCollapseModel]
+const models = [useCollapseModel, useBasicModel]
 
-const mapToProps = ([collapse]) => ({
+const mapToProps = ([collapse, basicModel]) => ({
   collapse: collapse.collapse,
-  changeCollapse: collapse.changeCollapse
+  changeCollapse: collapse.changeCollapse,
+  isMobile: basicModel.isMobile
 })
 
 export default withModel(models, mapToProps)(memo(Content))

@@ -1,11 +1,11 @@
 import React, { memo, useEffect } from 'react'
 import { Menu } from 'antd'
 import { withModel } from 'hox'
-// import { GithubFilled } from '@ant-design/icons'
 import { withRouter } from 'react-router-dom'
-import { AsideWrap, LogoWrap } from '../styled'
+import { AsideWrap, LogoWrap, DrawerWrap } from '../styled'
 import { useCollapseModel, useMenuModel } from '../store'
 import { Icon } from '@/components'
+import { useBasicModel } from '../../../store'
 
 const Aside = (props) => {
   const {
@@ -19,7 +19,9 @@ const Aside = (props) => {
     menuClick,
     setSelectedKeys,
     openKeySet,
-    onOpenChange
+    onOpenChange,
+    isMobile,
+    changeCollapse
   } = props
   useEffect(() => {
     setTimeout(() => {
@@ -30,15 +32,16 @@ const Aside = (props) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [location])
 
-  return (
-    <AsideWrap collapsed={collapse}>
+  const menuShow = () => (
+    <AsideWrap collapsed={collapse && !isMobile} width='256'>
       <LogoWrap>
         <Icon style={{ fontSize: 38, color: '#fff' }} type='bear' />{' '}
-        {collapse ? '' : <span>熊崽</span>}
+        {collapse && !isMobile ? '' : <span>熊崽</span>}
       </LogoWrap>
       <Menu
         theme='dark'
         mode='inline'
+        style={{ marginTop: 20 }}
         selectedKeys={selectedKeys}
         openKeys={openKeys}
         onOpenChange={onOpenChange}
@@ -52,12 +55,28 @@ const Aside = (props) => {
       </Menu>
     </AsideWrap>
   )
+
+  return isMobile ? (
+    <DrawerWrap
+      visible={collapse}
+      placement='left'
+      closable={false}
+      onClose={() => {
+        changeCollapse(false)
+      }}
+    >
+      {menuShow()}
+    </DrawerWrap>
+  ) : (
+    menuShow()
+  )
 }
 
-const models = [useCollapseModel, useMenuModel]
+const models = [useCollapseModel, useMenuModel, useBasicModel]
 
-const mapToProps = ([collapse, menuModel]) => ({
+const mapToProps = ([collapse, menuModel, basicModel]) => ({
   collapse: collapse.collapse,
+  changeCollapse: collapse.changeCollapse,
   menu: menuModel.menu,
   openKeys: menuModel.openKeys,
   selectedKeys: menuModel.selectedKeys,
@@ -66,7 +85,8 @@ const mapToProps = ([collapse, menuModel]) => ({
   menuClick: menuModel.menuClick,
   setSelectedKeys: menuModel.setSelectedKeys,
   openKeySet: menuModel.openKeySet,
-  onOpenChange: menuModel.onOpenChange
+  onOpenChange: menuModel.onOpenChange,
+  isMobile: basicModel.isMobile
 })
 
 export default withRouter(withModel(models, mapToProps)(memo(Aside)))
