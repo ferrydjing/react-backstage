@@ -3,30 +3,35 @@ import { Layout, Drawer } from 'antd'
 const { Sider, Content, Header } = Layout
 
 export const AsideWrap = styled(Sider)`
-  position: fixed !important;
-  left: 0;
-  height: 100vh;
+  &.ant-layout-sider {
+    position: fixed;
+    left: 0;
+    height: 100vh;
+  }
 `
 
 export const ContentWrap = styled(Layout)`
-  margin-left: 256px;
-  min-height: 100vh !important;
-  overflow-x: hidden !important;
-  overflow-y: scroll !important;
+  &.ant-layout {
+    margin-left: 256px;
+    min-height: 100vh;
+    overflow-x: hidden;
+    overflow-y: scroll;
+  }
 `
 
 export const HeaderWrap = styled(Header)`
-  position: fixed;
-  display: flex;
-  align-items: center;
-  /* width: 100%; */
-  right: 0;
-  left: 256px;
-  height: 56px !important;
-  background: #ffffff !important;
-  box-shadow: 0px 6px 16px 0px rgba(154, 167, 179, 0.2);
-  z-index: 1;
-  /* text-align: right; */
+  &.ant-layout-header {
+    position: fixed;
+    right: 0;
+    left: 256px;
+    padding: 0 24px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    background: #ffffff;
+    z-index: 1;
+    box-shadow: 0 1px 4px rgba(0, 21, 41, 0.08);
+  }
 `
 
 export const Main = styled(Content)`
@@ -38,7 +43,7 @@ export const LogoWrap = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 56px;
+  height: 48px;
   transition: width 0.3s ease-out;
   span {
     margin-left: 10px;

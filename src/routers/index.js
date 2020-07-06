@@ -6,22 +6,22 @@ const Index = lazy(() =>
 )
 
 const About = lazy(() =>
-  import(/*webpackChunkName: 'about' */ '@/views/pages/About')
+  import(/*webpackChunkName: 'layout' */ '@/views/pages/About')
 )
 
 const Button = lazy(() =>
-  import(/*webpackChunkName: 'button' */ '@/views/pages/Button')
+  import(/*webpackChunkName: 'layout' */ '@/views/pages/Button')
 )
 const Icon = lazy(() =>
-  import(/*webpackChunkName: 'icon' */ '@/views/pages/Icon')
+  import(/*webpackChunkName: 'layout' */ '@/views/pages/Icon')
 )
 
 const Table = lazy(() =>
-  import(/*webpackChunkName: 'table' */ '@/views/pages/Table')
+  import(/*webpackChunkName: 'layout' */ '@/views/pages/Table')
 )
 
 export const DefaultLayout = lazy(() =>
-  import(/* webpackChunkName: 'layout' */ '../views/Layout')
+  import(/* webpackChunkName: 'index' */ '../views/Layout')
 )
 
 export const NotFound = lazy(() =>
