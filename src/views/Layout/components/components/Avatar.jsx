@@ -18,7 +18,10 @@ const MyAvartar = () => {
     <AvatarWrap overlay={menu} width={{ width: 120 }}>
       <DropdownWrap>
         <span style={{ marginRight: 10 }}>sadasdsa</span>
-        <Avatar icon={<UserOutlined />}></Avatar>
+        <Avatar
+          icon={<UserOutlined />}
+          src='https://gw.alipayobjects.com/zos/antfincdn/XAosXuNZyF/BiazfanxmamNRoxxVxka.png'
+        ></Avatar>
       </DropdownWrap>
     </AvatarWrap>
   )

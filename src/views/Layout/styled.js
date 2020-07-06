@@ -12,7 +12,7 @@ export const AsideWrap = styled(Sider)`
 
 export const ContentWrap = styled(Layout)`
   &.ant-layout {
-    margin-left: 256px;
+    margin-left: 208px;
     min-height: 100vh;
     overflow-x: hidden;
     overflow-y: scroll;
@@ -23,7 +23,7 @@ export const HeaderWrap = styled(Header)`
   &.ant-layout-header {
     position: fixed;
     right: 0;
-    left: 256px;
+    left: 208px;
     padding: 0 24px;
     height: 48px;
     display: flex;
@@ -37,6 +37,7 @@ export const HeaderWrap = styled(Header)`
 export const Main = styled(Content)`
   margin-top: 56px;
   padding: 24px;
+  overflow-x: hidden;
 `
 
 export const LogoWrap = styled.div`

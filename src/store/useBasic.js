@@ -3,13 +3,21 @@ import { createModel } from 'hox'
 
 const useBasicModel = () => {
   const [isMobile, setIsMobile] = useState(false)
+  const [screenWidth, setScreenWidth] = useState(0)
+  const [screenHeight, setScreenHeight] = useState(0)
 
   const judgeIsMobile = () => {
-    console.log('isMobile:', document.body.clientWidth < 768)
     setIsMobile(document.body.clientWidth < 768)
   }
 
-  return { isMobile, judgeIsMobile }
+  return {
+    isMobile,
+    judgeIsMobile,
+    screenWidth,
+    setScreenWidth,
+    screenHeight,
+    setScreenHeight
+  }
 }
 
 export default createModel(useBasicModel)

@@ -1,1 +1,0 @@
-{"version":3,"sources":["views/pages/Table/index.jsx"],"names":["memo","props"],"mappings":"2HAAA,2BAMeA,0BAJD,SAACC,GACb,OAAO","file":"static/js/table.75ca9324.chunk.js","sourcesContent":["import React, { memo } from 'react'\n\nconst Table = (props) => {\n  return <div>Table</div>\n}\n\nexport default memo(Table)\n"],"sourceRoot":""}

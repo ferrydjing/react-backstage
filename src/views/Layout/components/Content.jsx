@@ -20,8 +20,8 @@ const Content = (props) => {
   const { collapse, changeCollapse, isMobile } = props
 
   return (
-    <ContentWrap style={{ marginLeft: isMobile ? 0 : collapse ? 80 : 256 }}>
-      <HeaderWrap style={{ left: isMobile ? 0 : collapse ? 80 : 256 }}>
+    <ContentWrap style={{ marginLeft: isMobile ? 0 : collapse ? 80 : 208 }}>
+      <HeaderWrap style={{ left: isMobile ? 0 : collapse ? 80 : 208 }}>
         <CollapsedWrap onClick={() => changeCollapse(!collapse)}>
           {collapse || isMobile ? (
             <MenuUnfoldOutlined style={{ fontSize: 22 }} />

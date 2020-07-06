@@ -18,25 +18,18 @@ const Loading = () => {
 }
 
 const App = (props) => {
-  const { judgeIsMobile } = props
+  const { judgeIsMobile, setScreenHeight, setScreenWidth } = props
   useEffect(() => {
     judgeIsMobile()
-    window.addEventListener(
-      'resize',
-      fp.throttle(200, () => {
-        judgeIsMobile()
-      }),
-      false
-    )
+    const resizeFn = fp.throttle(200, () => {
+      judgeIsMobile()
+      setScreenWidth(document.documentElement.clientWidth)
+      setScreenHeight(document.documentElement.clientHeight)
+    })
+    window.addEventListener('resize', resizeFn, false)
     return () => {
-      window.removeEventListener(
-        'resize',
-        fp.throttle(200, () => {
-          judgeIsMobile()
-        })
-      )
+      window.removeEventListener('resize', fp.throttle(200, resizeFn))
     }
-
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
@@ -57,7 +50,9 @@ const App = (props) => {
 const models = [useBasicModel]
 
 const mapToProps = ([basicModel]) => ({
-  judgeIsMobile: basicModel.judgeIsMobile
+  judgeIsMobile: basicModel.judgeIsMobile,
+  setScreenWidth: basicModel.setScreenWidth,
+  setScreenHeight: basicModel.setScreenHeight
 })
 
 export default withModel(models, mapToProps)(memo(App))

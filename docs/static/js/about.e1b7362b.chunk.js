@@ -1,2 +1,0 @@
-(this["webpackJsonpreact-backstage"]=this["webpackJsonpreact-backstage"]||[]).push([[3],{226:function(t,e,a){"use strict";a.r(e);var c=a(0),n=a.n(c);e.default=Object(c.memo)((function(t){return n.a.createElement("div",null,"About")}))}}]);
-//# sourceMappingURL=about.e1b7362b.chunk.js.map

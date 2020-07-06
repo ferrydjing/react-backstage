@@ -33,7 +33,7 @@ const Aside = (props) => {
   }, [location])
 
   const menuShow = () => (
-    <AsideWrap collapsed={collapse && !isMobile} width='256'>
+    <AsideWrap collapsed={collapse && !isMobile} width='208'>
       <LogoWrap>
         <Icon style={{ fontSize: 38, color: '#fff' }} type='bear' />{' '}
         {collapse && !isMobile ? '' : <span>熊崽</span>}
