@@ -55,4 +55,4 @@ const mapToProps = ([basicModel]) => ({
   setScreenHeight: basicModel.setScreenHeight
 })
 
-export default withModel(models, mapToProps)(memo(App))
+export default memo(withModel(models, mapToProps)(App))

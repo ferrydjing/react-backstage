@@ -47,4 +47,4 @@ const mapToProps = ([collapse, basicModel]) => ({
   isMobile: basicModel.isMobile
 })
 
-export default withModel(models, mapToProps)(memo(Content))
+export default memo(withModel(models, mapToProps)(Content))

@@ -35,8 +35,8 @@ export const HeaderWrap = styled(Header)`
 `
 
 export const Main = styled(Content)`
-  margin-top: 56px;
-  padding: 24px;
+  margin-top: 48px;
+  padding: 24px 24px;
   overflow-x: hidden;
 `
 

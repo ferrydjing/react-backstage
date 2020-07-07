@@ -60,6 +60,7 @@ const Aside = (props) => {
     <DrawerWrap
       visible={collapse}
       placement='left'
+      width='208'
       closable={false}
       onClose={() => {
         changeCollapse(false)
@@ -89,4 +90,4 @@ const mapToProps = ([collapse, menuModel, basicModel]) => ({
   isMobile: basicModel.isMobile
 })
 
-export default withRouter(withModel(models, mapToProps)(memo(Aside)))
+export default withRouter(memo(withModel(models, mapToProps)(Aside)))

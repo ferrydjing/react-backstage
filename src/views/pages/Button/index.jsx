@@ -113,4 +113,4 @@ const mapModelsToProps = ([loadingModel]) => ({
   loadingChange: loadingModel.loadingChange
 })
 
-export default withModel(models, mapModelsToProps)(memo(PageButton))
+export default memo(withModel(models, mapModelsToProps)(PageButton))

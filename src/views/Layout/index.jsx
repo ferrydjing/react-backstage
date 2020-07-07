@@ -44,5 +44,5 @@ const mapModelsToProps = ([menuModel, basicModel]) => ({
 })
 
 export default withRouter(
-  withModel(models, mapModelsToProps)(memo(LayoutContainer))
+  memo(withModel(models, mapModelsToProps)(LayoutContainer))
 )

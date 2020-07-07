@@ -1,3 +1,8 @@
+/**
+ * @desc 首页卡片（待优化,echarts以及卡片）
+ *
+ */
+
 import React, { memo, useEffect, useState } from 'react'
 import { withModel } from 'hox'
 import { Tooltip } from 'antd'
@@ -141,4 +146,4 @@ const mapToProps = ([basicModel, useChart]) => ({
   screenHeight: basicModel.screenHeight
 })
 
-export default withModel(models, mapToProps)(memo(Card))
+export default memo(withModel(models, mapToProps)(Card))
